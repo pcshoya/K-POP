@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+header{
+	position: fixed;
+	height: 80px;
+	line-height: 80px;
+	width: 100%;
+	background-color: orange;
+	font-size: 32px;
+	text-align: center;
+	top: 0px;
+	left: 0px;
+}
+nav{
+	position: fixed;
+	height: 20px;
+	line-height: 20px;
+	width: 100%;
+	background-color: pink;
+	top: 80px;
+	left: 0px;
+	text-decoration: none;
+}
+footer{
+	position: fixed;
+	height: 80px;
+	line-height: 80px;
+	width: 100%;
+	background-color: orange;
+	text-align: center;
+	bottom: 0px;
+	left: 0px;
+}
+section{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 100px;
+	left: 0px;
+	background-color: lightgray;
+}
+.center{
+	text-align: center;
+}
+table {
+	margin: auto;
+}
+
+a{
+	text-decoration: none;
+}
