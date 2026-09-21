@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="main.css">
+<link href="main.css" type="stylesheet">
 </head>
 <body>
 	<header> K-POP 공연장 관리프로그램 Ver 1.0 </header>
