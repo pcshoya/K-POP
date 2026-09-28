@@ -23,7 +23,7 @@
 	try{
 		
 		String sql ="insert into TBL_RESERVATIONS values(?,?,?,?,?,?,?,?)";
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, rid);
 		pstmt.setString(2, sid);
 		pstmt.setString(3, name);

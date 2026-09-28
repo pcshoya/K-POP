@@ -25,7 +25,7 @@
 				<%
 				try {
 					String sql = "SELECT VENUE_ID, VENUE_NAME, ADDRESS, CITY, TO_CHAR(CAPACITY, '999,999') FROM TBL_VENUES";
-					PreparedStatement pstmt = conn.prepareStatement(sql);
+					PreparedStatement pstmt = con.prepareStatement(sql);
 					ResultSet rs = pstmt.executeQuery();
 					while (rs.next()) {
 				%>

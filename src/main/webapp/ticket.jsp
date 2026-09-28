@@ -27,7 +27,7 @@
 				<%
 				try {
 					String sql = "SELECT R.RESERVATION_ID, R.BUYER_NAME, C.CONCERT_TITLE, TO_CHAR(R.UNIT_PRICE, '999,999'), R.TICKET_COUNT, TO_CHAR(R.UNIT_PRICE * R.TICKET_COUNT, '999,999'), R.PAY_STATUS FROM TBL_RESERVATIONS R, TBL_CONCERTS C WHERE R.CONCERT_ID = C.CONCERT_ID";
-					PreparedStatement pstmt = conn.prepareStatement(sql);
+					PreparedStatement pstmt = con.prepareStatement(sql);
 					ResultSet rs = pstmt.executeQuery();
 					while (rs.next()) {
 				%>
@@ -44,7 +44,7 @@
 				<%
 				}
 				} catch (Exception e) {
-				out.print("db error : " + e.getMessage());
+					out.print("db error : " + e.getMessage());	
 				}
 				%>
 			</table>
