@@ -1,7 +1,7 @@
-2시 45분까지 : dbconnect.jsp
+1시 40분까지 : dbconnect.jsp
 
-6교시 : 예매내역 조회 - search2.jsp
-7교시 : 예매등록 - insert.jsp
+5교시 : 예매등록 - in_action.jsp
+6교시 : 자습
 
 제공파일 : header.jsp, footer.jsp, index.jsp, main.css, db.sql
 

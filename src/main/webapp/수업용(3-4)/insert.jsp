@@ -13,7 +13,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <section>
 <h2>예매등록</h2>
-<form name="frm" onsubmit="return check()" action="insert_action.jsp">
+<form name="frm" onsubmit="return check()" action="in_action.jsp">
 <table border="1">
 	<tr>
 		<th>예매아이디</th>

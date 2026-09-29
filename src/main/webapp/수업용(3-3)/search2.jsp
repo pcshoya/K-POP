@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="dbconnect.jsp" %>
-<%@ page import="java.sql.*" %>    
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,22 +13,22 @@
 <section>
 <h2>예매내역조회</h2>
 <table border="1">
-<tr>
-	<th>예약아이디</th>
-	<th>예매자이름</th>
-	<th>공연명</th>
-	<th>금액(원)</th>
-	<th>티켓수량(매)</th>
-	<th>총금액(원)</th>
-	<th>결재상태</th>
-</tr>
+	<tr>
+		<th>예약아이디</th>
+		<th>예매자이름</th>
+		<th>공연명</th>
+		<th>금액(원)</th>
+		<th>티켓수량(매)</th>
+		<th>총금액(원)</th>
+		<th>결제상태</th>
+	</tr>
 <%
-	String sql = "SELECT RESERVATION_ID, BUYER_NAME, CONCERT_TITLE, TO_CHAR(BASE_PRICE,'999,999'), TICKET_COUNT, TO_CHAR(TOTAL_PRICE,'999,999'), PAY_STATUS FROM TBL_RESERVATIONS R JOIN TBL_CONCERTS C ON R.CONCERT_ID = C.CONCERT_ID";
+	String sql = "SELECT RESERVATION_ID, BUYER_NAME, CONCERT_TITLE, TO_CHAR(UNIT_PRICE,'999,999'), TICKET_COUNT, TO_CHAR(TOTAL_PRICE,'999,999'), PAY_STATUS  FROM TBL_CONCERTS C JOIN TBL_RESERVATIONS R ON C.CONCERT_ID = R.CONCERT_ID ORDER BY RESERVATION_ID ASC";
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery();
 	
 	while(rs.next()){
-%>		
+%>
 	<tr>
 		<td class="center"><%=rs.getString(1) %></td>
 		<td class="center"><%=rs.getString(2) %></td>
@@ -36,11 +36,10 @@
 		<td class="center"><%=rs.getString(4) %></td>
 		<td class="center"><%=rs.getString(5) %></td>
 		<td class="center"><%=rs.getString(6) %></td>
-		<td class="center"><%=rs.getInt(7)==1?"PAID":rs.getInt(7)==2?"UNPAID":"REFUNDED" %></td>
+		<td class="center"><%=rs.getInt(7)==1?"PIAD":rs.getInt(7)==2?"UNPAID":"REFUNDED" %></td>
 	</tr>
 <%	
 	}
-	
 %>
 </table>
 </section>
