@@ -26,11 +26,12 @@
 				<th>공연상태</th>
 			</tr>
 			<%
-			String sql = "SELECT VENUE_NAME, ADDRESS, TO_CHAR(CAPACITY,'999,999'),CONCERT_TITLE, ARTIST_NAME, TO_CHAR(CONCERT_DATE,'YYYY-MM-DD'),TO_CHAR(START_TIME,'HH24:MI'), TO_CHAR(END_TIME,'HH24:MI'), TO_CHAR(BASE_PRICE,'999,999'), STATUS FROM TBL_VENUES V JOIN TBL_CONCERTS C ON  V.VENUE_ID = C.VENUE_ID";
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
+			try {
+				String sql = "SELECT VENUE_NAME, ADDRESS, TO_CHAR(CAPACITY,'999,999'),CONCERT_TITLE, ARTIST_NAME, TO_CHAR(CONCERT_DATE,'YYYY-MM-DD'),TO_CHAR(START_TIME,'HH24:MI'), TO_CHAR(END_TIME,'HH24:MI'), TO_CHAR(BASE_PRICE,'999,999'), STATUS FROM TBL_VENUES V JOIN TBL_CONCERTS C ON  V.VENUE_ID = C.VENUE_ID";
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				ResultSet rs = pstmt.executeQuery();
 
-			while (rs.next()) {
+				while (rs.next()) {
 			%>
 			<tr>
 				<td class="center"><%=rs.getString(1)%></td>
@@ -44,9 +45,12 @@
 				<td class="center"><%=rs.getString(9)%></td>
 				<td class="center"><%=rs.getInt(10) == 1 ? "OPEN" : rs.getInt(10) == 2 ? "SOLD_OUT" : rs.getInt(10) == 3 ? "CANCELED" : "DONE"%></td>
 			</tr>
-			<%	
-	}
-%>
+			<%
+			}
+			} catch (Exception e) {
+			out.print("DB오류 : " + e.getMessage());
+			}
+			%>
 		</table>
 	</section>
 <jsp:include page="footer.jsp"></jsp:include>
