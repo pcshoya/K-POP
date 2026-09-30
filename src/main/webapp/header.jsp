@@ -13,7 +13,7 @@
 		&nbsp;&nbsp;<a href="search.jsp">공연장조회</a> &nbsp;&nbsp; <a
 			href="concert.jsp">콘서트일정조회</a> &nbsp;&nbsp; <a href="insert.jsp">예매등록</a>
 		&nbsp;&nbsp; <a href="search2.jsp">예매내역조회</a> &nbsp;&nbsp; <a
-			href="index.jsp">홈으로</a> &nbsp;&nbsp;
+			href="index.jsp">홈으로</a>
 	</nav>
 </body>
 </html>
